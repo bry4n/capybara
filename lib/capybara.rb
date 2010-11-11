@@ -16,6 +16,7 @@ module Capybara
     attr_accessor :debug, :asset_root, :app_host, :run_server, :default_host
     attr_accessor :default_selector, :default_wait_time, :ignore_hidden_elements
     attr_accessor :save_and_open_page_path
+    attr_accessor :server_timeout
 
     def default_selector
       @default_selector ||= :xpath
@@ -23,6 +24,10 @@ module Capybara
 
     def default_wait_time
       @default_wait_time ||= 2
+    end
+
+    def server_timeout
+      @server_timeout ||= 10
     end
 
     def log(message)
@@ -51,3 +56,4 @@ Capybara.run_server = true
 Capybara.default_selector = :xpath
 Capybara.default_wait_time = 2
 Capybara.ignore_hidden_elements = false
+Capybara.server_timeout = 10

@@ -65,7 +65,7 @@ class Capybara::Server
     end
     Capybara.log "checking if application has booted"
 
-    Capybara::WaitUntil.timeout(10) do
+    Capybara::WaitUntil.timeout(Capybara.server_timeout) do
       if responsive?
         Capybara.log("application has booted")
         true
